@@ -60,7 +60,7 @@ export default function LandingPage() {
                 id="features-heading"
                 className="text-3xl font-bold text-[#6320ce] text-center mb-14 lg:mb-12"
               >
-                Our Solutions
+                Our Solutions123
               </h2>
               <AgentCarousel />
             </AnimateOnScroll>
