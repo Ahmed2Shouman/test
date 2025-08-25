@@ -67,7 +67,7 @@ export async function submitContactForm(formData: FormData) {
     console.log("Sending email to info@makkn.com...");
     // Send email to info@makkn.com
     const emailResult = await sendEmail({
-      to: "ahany263@gmail.com",
+      to: "info@makkn.com",
       subject: `New Contact Form Submission from ${firstName} ${lastName} - ${company}`,
       html: emailHTML,
     });
