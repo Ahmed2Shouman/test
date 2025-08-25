@@ -35,7 +35,14 @@ export default function ContactPage() {
       const jobTitle = formData.get("jobTitle") as string;
       const message = formData.get("message") as string;
 
-      if (!firstName || !lastName || !email || !company || !jobTitle || !message) {
+      if (
+        !firstName ||
+        !lastName ||
+        !email ||
+        !company ||
+        !jobTitle ||
+        !message
+      ) {
         setFormError(
           "Please fill in all required fields (First Name, Last Name, Email, Company, Job Title, Message)"
         );
@@ -69,11 +76,7 @@ export default function ContactPage() {
           form.reset();
         }, 5000);
       } else {
-        console.error(
-          "Contact form failed:",
-          result.error,
-          result.details
-        );
+        console.error("Contact form failed:", result.error, result.details);
         setFormError(
           result.error || "An error occurred while sending your message."
         );
