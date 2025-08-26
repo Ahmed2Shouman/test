@@ -11,6 +11,7 @@ import AnimateOnScroll from "@/components/animate-on-scroll";
 import { submitContactForm } from "@/app/actions/contact";
 import MainNavigation from "@/components/main-navigation";
 import MainFooter from "@/components/main-footer";
+import Chatbot from "@/components/Chatbot";
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -26,41 +27,7 @@ export default function ContactPage() {
 
     try {
       const formData = new FormData(e.target as HTMLFormElement);
-
-      // Client-side validation before sending
-      const firstName = formData.get("firstName") as string;
-      const lastName = formData.get("lastName") as string;
-      const email = formData.get("email") as string;
-      const company = formData.get("company") as string;
-      const jobTitle = formData.get("jobTitle") as string;
-      const message = formData.get("message") as string;
-
-      if (
-        !firstName ||
-        !lastName ||
-        !email ||
-        !company ||
-        !jobTitle ||
-        !message
-      ) {
-        setFormError(
-          "Please fill in all required fields (First Name, Last Name, Email, Company, Job Title, Message)"
-        );
-        setIsLoading(false);
-        return;
-      }
-
-      console.log("Submitting contact form with data:", {
-        firstName,
-        lastName,
-        email,
-        company,
-        jobTitle,
-      });
-
       const result = await submitContactForm(formData);
-
-      console.log("Contact form result:", result);
 
       if (result.success) {
         setFormSubmitted(true);
@@ -76,15 +43,9 @@ export default function ContactPage() {
           form.reset();
         }, 5000);
       } else {
-        console.error("Contact form failed:", result.error, result.details);
         setFormError(
           result.error || "An error occurred while sending your message."
         );
-
-        // Show additional details in development
-        if (process.env.NODE_ENV === "development" && result.details) {
-          setFormError(`${result.error}\n\nDetails: ${result.details}`);
-        }
       }
     } catch (error) {
       console.error("Form submission error:", error);
@@ -256,6 +217,7 @@ export default function ContactPage() {
       </main>
 
       <MainFooter />
+      <Chatbot />
     </div>
   );
 }

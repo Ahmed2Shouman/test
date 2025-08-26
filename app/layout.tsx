@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import ContextProvider from "../contexts/ChatbotContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,7 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans`}>{children}</body>
+      <body className={`${poppins.variable} font-sans`}>
+        <ContextProvider>
+          {children}
+        </ContextProvider>
+      </body>
     </html>
   );
 }

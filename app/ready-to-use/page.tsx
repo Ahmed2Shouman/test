@@ -8,6 +8,14 @@ import AnimateOnScroll from "@/components/animate-on-scroll";
 import { useState } from "react";
 import React from "react";
 import ReadyToUseGif from "@/components/ReadyToUseGif";
+import Chatbot from "@/components/Chatbot";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
 
 export default function page() {
   const [demoDialogOpen, setDemoDialogOpen] = useState(false);
@@ -69,7 +77,7 @@ export default function page() {
 
   return (
     <div
-      className={`flex min-h-screen flex-col bg-white dark:bg-gray-900 font-sans`}
+      className={`flex min-h-screen flex-col bg-white dark:bg-gray-900 ${poppins.variable} font-sans`}
     >
       <MainNavigation />
       <AnimateOnScroll>
@@ -116,6 +124,7 @@ export default function page() {
         selectedDemoType={selectedDemoType}
       />
       <MainFooter />
+      <Chatbot />
     </div>
   );
 }
