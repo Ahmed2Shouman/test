@@ -96,7 +96,7 @@ export default function page() {
         <div className="mx-auto w-full">
           <ReadyToUseSection
             title="Customer Support"
-            description="Advanced customer support automation"
+            description="Enhance customer support through AI that intelligently understands and resolves inquiries in real time."
             gifUrl="/customer-support.gif"
             gifPosition="left"
             onBookDemo={() => {
@@ -108,7 +108,7 @@ export default function page() {
         <div className="w-full mx-auto bg-gray-100">
           <ReadyToUseSection
             title="Document Intelligence"
-            description="Advanced document processing and analysis."
+            description="Transform unstructured documents and data into organized, actionable insights."
             gifUrl="/document-intelligence.gif"
             gifPosition="right"
             onBookDemo={() => {
