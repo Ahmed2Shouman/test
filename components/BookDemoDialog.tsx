@@ -110,13 +110,10 @@ export default function BookDemoDialog({
           onClose();
         }, 2000);
       } else {
-        console.error(
-          "Demo request failed:",
-          result.error,
-          result.details
-        );
+        console.error("Demo request failed:", result.error, result.details);
         setFormError(
-          result.error || "An error occurred while submitting your demo request."
+          result.error ||
+            "An error occurred while submitting your demo request."
         );
 
         // Show additional details in development
@@ -257,7 +254,7 @@ export default function BookDemoDialog({
               {/* Contact Email */}
               <div className="pb-4">
                 <Label htmlFor="contactEmail" className="text-sm font-medium">
-                  Contact Email
+                  Business Email
                 </Label>
                 <Input
                   id="contactEmail"
@@ -301,7 +298,9 @@ export default function BookDemoDialog({
                     >
                       <div>
                         <div className="font-medium">Customer Support</div>
-                        <div className="text-sm text-gray-600">AI-powered</div>
+                        <div className="text-sm text-gray-600">
+                          Advanced customer support automation
+                        </div>
                       </div>
                     </SelectItem>
                     <SelectItem

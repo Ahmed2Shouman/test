@@ -87,7 +87,7 @@ export default function page() {
               Ready to Use Solutions
             </h1>
             <p className="max-w-[700px] text-muted-foreground text-lg md:text-xl lg:text-2xl leading-relaxed px-6 md:px-8">
-              Help us build the future of AI Solutions for businesses
+              Built to integrate effortlessly into your workflow.
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function page() {
         <div className="mx-auto w-full">
           <ReadyToUseSection
             title="Customer Support"
-            description="Ai-Powered"
+            description="Advanced customer support automation"
             gifUrl="/customer-support.gif"
             gifPosition="left"
             onBookDemo={() => {
